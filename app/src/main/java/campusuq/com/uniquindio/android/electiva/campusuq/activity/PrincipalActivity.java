@@ -35,6 +35,8 @@ public class PrincipalActivity extends AppCompatActivity implements noticiaFragm
      * Metodo que nos permite realizar las inicializaciones los componentes de la actividad
      * @param savedInstanceState, objeto de tipo Bundle que nos permite compartir datos entre activiades
      */
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
