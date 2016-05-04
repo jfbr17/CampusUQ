@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CampusUQ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_1">Menu 1</string>
+    <string name="text_2">Menu 2</string>
+    <string name="text_3">Menu 3</string>
+    <string name="text_4">Menu 4</string>
+    <string name="text_5">Menu 5</string>
 </resources>
