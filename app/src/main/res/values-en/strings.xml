@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CampusUQ</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="cambiar_idioma">change lenguage</string>
+    <string name="pagina_universidad">college paged</string>
+    <string name="descripcion_imagen_detalle">Description detail image</string>
+    <string name="item_1">diary</string>
+    <string name="item_2">news</string>
+    <string name="item_3">suggest</string>
+</resources>

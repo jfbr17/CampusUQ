@@ -2,37 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_uno"
+        android:id="@+id/pagina_universidad"
         android:icon="@mipmap/ic_launcher"
         android:orderInCategory="1"
-        android:title="@string/text_1"
+        android:title="@string/pagina_universidad"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/menu_dos"
+        android:id="@+id/cambiar_idioma"
         android:icon="@mipmap/ic_launcher"
         android:orderInCategory="1"
-        android:title="@string/text_2"
+        android:title="@string/cambiar_idioma"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/menu_tres"
-        android:icon="@mipmap/ic_launcher"
-        android:orderInCategory="1"
-        android:title="@string/text_3"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/menu_cuatro"
-        android:icon="@mipmap/ic_launcher"
-        android:orderInCategory="1"
-        android:title="@string/text_4"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/menu_cinco"
-        android:icon="@mipmap/ic_launcher"
-        android:orderInCategory="1"
-        android:title="@string/text_5"
-        app:showAsAction="never" />
 </menu>

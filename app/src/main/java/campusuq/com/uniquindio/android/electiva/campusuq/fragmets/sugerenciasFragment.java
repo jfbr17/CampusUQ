@@ -8,18 +8,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import campusuq.com.uniquindio.android.electiva.campusuq.R;
-
 /**
- * A simple {@link Fragment} subclass.
+ * Universidad del Quindio
+ * @author Jhon Fredy Bedoya
+ * @author Willian David Meza
+ * @since  2015-05-04
+ *
+ * Actividad que implementa la sugerencia fragment
  */
 public class sugerenciasFragment extends Fragment {
 
-
+    /**
+     * Metodo constructor del fragmanto
+     */
     public sugerenciasFragment() {
         // Required empty public constructor
     }
-
-
+    /**
+     * Metodo que nos permite realizar las inicializaciones los componentes del fragmento
+     * @param savedInstanceState, objeto de tipo Bundle que nos permite compartir datos entre fragmentos
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

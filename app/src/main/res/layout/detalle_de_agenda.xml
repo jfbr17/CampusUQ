@@ -4,33 +4,39 @@
     android:id="@+id/detalle_pelicula"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:padding="4dp"
+    android:layout_margin="0dp"
+    android:padding="2dp"
     card_view:cardBackgroundColor="@color/white"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="7dp">
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="12dp">
 
         <TextView
-            android:id="@+id/titulo"
+            android:id="@+id/dependencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/verde"
             android:gravity="center"
             android:padding="2dp"
-            android:textSize="30sp" />
+            android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/imagen"
+        <TextView
+            android:id="@+id/numero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxHeight="10dp" />
+            android:padding="2dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/extencion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </android.support.v7.widget.CardView>
