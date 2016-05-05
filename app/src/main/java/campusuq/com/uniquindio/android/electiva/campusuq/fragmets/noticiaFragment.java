@@ -49,12 +49,13 @@ public class noticiaFragment extends Fragment implements AdaptadorDeNoticias.OnC
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         noticias = new ArrayList();
-        noticias.add(new noticia("Noticia1", R.drawable.interstellar_encabezado));
-        noticias.add(new noticia("Noticia2", R.drawable.interstellar_encabezado));
-        noticias.add(new noticia("Noticia3", R.drawable.interstellar_encabezado));
-        noticias.add(new noticia("Noticia4", R.drawable.interstellar_encabezado));
-        noticias.add(new noticia("Noticia5", R.drawable.interstellar_encabezado));
+        noticias.add(new noticia("Noticia1", R.drawable.noticia));
+        noticias.add(new noticia("Noticia2", R.drawable.noticia));
+        noticias.add(new noticia("Noticia3", R.drawable.noticia));
+        noticias.add(new noticia("Noticia4", R.drawable.noticia));
+        noticias.add(new noticia("Noticia5", R.drawable.noticia));
         listadoDeNoticias = (RecyclerView) getView().findViewById(R.id.RecView);
         adaptador = new AdaptadorDeNoticias(noticias, this);
         listadoDeNoticias.setAdapter(adaptador);

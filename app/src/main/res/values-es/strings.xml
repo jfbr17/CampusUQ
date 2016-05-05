@@ -11,4 +11,7 @@
     <string name="item_1">Agenda</string>
     <string name="item_2">Noticia</string>
     <string name="item_3">Sugerir</string>
+    <string name="enviar">Enviar</string>
+    <string name="texto_asunto">Asunto</string>
+    <string name="texto_sugerencia">Sugerencia</string>
 </resources>

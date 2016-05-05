@@ -53,13 +53,14 @@ public class PrincipalActivity extends AppCompatActivity implements noticiaFragm
         tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#FFffffff")));
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFffffff"));
 
+        String cuerpo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
 
         noticias = new ArrayList();
-        noticias.add(new noticia("Noticia1", R.drawable.interstellar_encabezado, "2016-05-04", "hola a todos1"));
-        noticias.add(new noticia("Noticia2", R.drawable.interstellar_encabezado, "2016-05-04", "hola a todos2"));
-        noticias.add(new noticia("Noticia3", R.drawable.interstellar_encabezado, "2016-05-04", "hola a todos3"));
-        noticias.add(new noticia("Noticia4", R.drawable.interstellar_encabezado, "2016-05-04", "hola a todos4"));
-        noticias.add(new noticia("Noticia5", R.drawable.interstellar_encabezado, "2016-05-04", "hola a todos6"));
+        noticias.add(new noticia("Noticia1", R.drawable.noticia, "2016-05-04", cuerpo));
+        noticias.add(new noticia("Noticia2", R.drawable.noticia, "2016-05-04", cuerpo));
+        noticias.add(new noticia("Noticia3", R.drawable.noticia, "2016-05-04", cuerpo));
+        noticias.add(new noticia("Noticia4", R.drawable.noticia, "2016-05-04", cuerpo));
+        noticias.add(new noticia("Noticia5", R.drawable.noticia, "2016-05-04", cuerpo));
 
         noticiasFragment = (noticiaFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_peliculas);
         noticiasFragment.setNoticias(noticias);
