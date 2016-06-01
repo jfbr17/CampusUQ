@@ -1,5 +1,6 @@
 package campusuq.com.uniquindio.android.electiva.campusuq.util;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,12 +28,15 @@ public class AdaptadoDePagerFragmet extends FragmentPagerAdapter {
      * Metodo contructor de la clase AdaptadoDePagerFragmet
      * @param fm, el FragmentManager
      */
-    public AdaptadoDePagerFragmet(FragmentManager fm) {
+    public AdaptadoDePagerFragmet(FragmentManager fm,Context context) {
         super(fm);
         listaDeTiulos = new ArrayList<>();
-        listaDeTiulos.add("Agenda");
-        listaDeTiulos.add("Noticias");
-        listaDeTiulos.add("Sugerir");
+        String item1 = context.getResources().getString(R.string.item_1);
+        String item2 = context.getResources().getString(R.string.item_2);
+        String item3 = context.getResources().getString(R.string.item_3);
+        listaDeTiulos.add(item1);
+        listaDeTiulos.add(item2);
+        listaDeTiulos.add(item3);
     }
     /**
      * Metodo que permite obtener el fragmento de cada item

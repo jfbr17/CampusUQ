@@ -28,6 +28,12 @@ public class Agenda {
         this.numero = numero;
         this.extencion = extencion;
     }
+
+    public Agenda(String dependencia, String numero) {
+        this.dependencia = dependencia;
+        this.numero = numero;
+    }
+
     /**
      * Metodo que permite obtener la dependencia de la agenda
      * @return la dependencia de la agenda

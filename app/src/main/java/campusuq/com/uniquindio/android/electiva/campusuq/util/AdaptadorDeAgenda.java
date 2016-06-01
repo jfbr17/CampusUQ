@@ -26,8 +26,9 @@ public class AdaptadorDeAgenda  extends RecyclerView.Adapter<AdaptadorDeAgenda.A
      * Metodo contructor de la clase adaptadorDeAgenda
      * @param agenda, el Arraylist de agenda
      */
-    public AdaptadorDeAgenda(ArrayList<Agenda> agenda) {
+    public AdaptadorDeAgenda(ArrayList<Agenda> agenda, agendaFragment agendaFragment) {
         this.Agenda = agenda;
+        listener = (OnClickAdaptadorDeAgenda) agendaFragment;
     }
     /**
      * Metodo que permite crear una vista de tipo pelicula para el reciclerView
@@ -52,7 +53,7 @@ public class AdaptadorDeAgenda  extends RecyclerView.Adapter<AdaptadorDeAgenda.A
         holder.binAgenda(agenda);
     }
     /**
-     * Metodo que permite contar los elemmentos de la lista
+     * Metodo que permite contar los elementos de la lista
      * @return el tamaño de la lista
      */
     @Override
@@ -78,7 +79,7 @@ public class AdaptadorDeAgenda  extends RecyclerView.Adapter<AdaptadorDeAgenda.A
         }
         /**
          * Metodo que permite modificar los atributos de la agenda
-         * @paraman, la agenda
+         * @param a, la agenda
          */
         public void binAgenda(Agenda a) {
             txtDependencia.setText(a.getDependencia());

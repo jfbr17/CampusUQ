@@ -30,7 +30,7 @@ public class AdaptadorDeNoticias  extends RecyclerView.Adapter<AdaptadorDeNotici
      */
     public AdaptadorDeNoticias(ArrayList<noticia> noticias, noticiaFragment noticiaFragment ) {
         this.noticias = noticias;
-        listener= (OnClickAdaptadorDeNoticia) noticiaFragment;
+        listener = (OnClickAdaptadorDeNoticia) noticiaFragment;
     }
     /**
      * Metodo que permite crear una vista de tipo pelicula para el reciclerView

@@ -1,42 +1,55 @@
 package campusuq.com.uniquindio.android.electiva.campusuq.activity;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
 import campusuq.com.uniquindio.android.electiva.campusuq.R;
 import campusuq.com.uniquindio.android.electiva.campusuq.fragmets.noticiaFragment;
 import campusuq.com.uniquindio.android.electiva.campusuq.fragmets.agendaFragment;
 import campusuq.com.uniquindio.android.electiva.campusuq.fragmets.detalleNoticiaFragment;
+import campusuq.com.uniquindio.android.electiva.campusuq.vo.Agenda;
 import campusuq.com.uniquindio.android.electiva.campusuq.vo.noticia;
 import campusuq.com.uniquindio.android.electiva.campusuq.util.AdaptadoDePagerFragmet;
+
 import android.support.design.widget.TabLayout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
 /**
  * Universidad del Quindio
  * @author Jhon Fredy Bedoya
  * @author Willian David Meza
- * @since  2015-05-04
+ * @since 2015-05-04
  *
  * clase que implementa la actividad principal
  */
-public class PrincipalActivity extends AppCompatActivity implements noticiaFragment.OnNoticiaSeleccionadaListener {
+public class PrincipalActivity extends AppCompatActivity implements noticiaFragment.OnNoticiaSeleccionadaListener, agendaFragment.OnAgendaSeleccionadaListener {
+
 
     private noticiaFragment noticiasFragment;
+    private agendaFragment agendaFragment;
     private ArrayList<noticia> noticias;
+    private ArrayList<Agenda> Agenda;
+
+
     /**
      * Metodo que nos permite realizar las inicializaciones los componentes de la actividad
      * @param savedInstanceState, objeto de tipo Bundle que nos permite compartir datos entre activiades
      */
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +57,8 @@ public class PrincipalActivity extends AppCompatActivity implements noticiaFragm
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        AdaptadoDePagerFragmet adapter = new AdaptadoDePagerFragmet(getSupportFragmentManager());
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(new AdaptadoDePagerFragmet(getSupportFragmentManager()));
+        viewPager.setAdapter(new AdaptadoDePagerFragmet(getSupportFragmentManager(), this));
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(viewPager);
@@ -64,6 +76,17 @@ public class PrincipalActivity extends AppCompatActivity implements noticiaFragm
 
         noticiasFragment = (noticiaFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_peliculas);
         noticiasFragment.setNoticias(noticias);
+
+         Agenda = new ArrayList();
+         Agenda.add(new Agenda("Secretaria", "0367402383"));
+         Agenda.add(new Agenda("Direccion", "0367402383"));
+         Agenda.add(new Agenda("Proyecto", "0367402383"));
+         Agenda.add(new Agenda("Laboratorio", "0367402383"));
+         Agenda.add(new Agenda("GRID", "0367402383"));
+         Agenda.add(new Agenda("CEIFI", "0367402383"));
+
+        agendaFragment = (agendaFragment) getSupportFragmentManager().findFragmentById(R.id.RecView);
+//        agendaFragment.setAgenda(Agenda);
 
     }
 
@@ -92,6 +115,19 @@ public class PrincipalActivity extends AppCompatActivity implements noticiaFragm
                     detallenoticiaActivity.class);
             intent.putExtra("noticia", noticias.get(position));
             startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onAgendaSeleccionada(int position) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + Agenda.get(position).getNumero()));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            startActivity(intent);
+        }catch (ActivityNotFoundException activityException){
+            Log.e("ET", "No se pudo realizar la llamada.", activityException);
         }
     }
 
